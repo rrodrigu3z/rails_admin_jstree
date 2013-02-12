@@ -1,0 +1,12 @@
+en:
+  admin:
+    actions:
+      jstree:
+        title: "Tree View for %{model_label}"
+        menu: "Tree View"
+        breadcrumb: "Tree View"
+        link: "Tree View"
+        # bulk_link: "Sort selected %{model_label_plural}"
+        done: "Done"
+        success: "Success"
+        error: "Error"

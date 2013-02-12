@@ -1,0 +1,12 @@
+es:
+  admin:
+    actions:
+      jstree:
+        title: "Vista de árbol para %{model_label}"
+        menu: "Vista de Árbol"
+        breadcrumb: "Vista de Árbol"
+        link: "Vista de Árbol"
+        # bulk_link: "Sort selected %{model_label_plural}"
+        done: "Hecho"
+        success: "Operación exitosa"
+        error: "Error"
