@@ -1,0 +1,9 @@
+.row-fluid
+  .span6#rails_admin_jstree
+    .js_tree_nodes{:'data-update-path' => jstree_path(model_name: @abstract_model)}
+
+= #stylesheet_link_tag 'rails_admin/rails_admin_nestable'
+= javascript_include_tag 'rails_admin/jquery.cookie'
+= javascript_include_tag 'rails_admin/jquery.hotkeys'
+= javascript_include_tag 'rails_admin/jquery.jstree'
+= javascript_include_tag 'rails_admin/rails_admin_jstree'
