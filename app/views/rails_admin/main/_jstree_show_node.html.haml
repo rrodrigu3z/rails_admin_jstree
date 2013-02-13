@@ -1,0 +1,22 @@
+- @model_config.show.with(:object => @object, :view => self).visible_groups.each do |fieldset|
+  - unless (fields = fieldset.with(:object => @object, :view => self, :controller => self.controller).visible_fields).empty?
+    - if !(values = fields.map{ |f| f.value.presence }).compact.empty? || !RailsAdmin::config.compact_show_view
+      .well
+        .navbar
+          .navbar-inner
+            %h5 Detalles de Carpeta seleccionada
+        .body
+          .row.row-fluid
+            .span8
+              %h6.subtitle= fieldset.label
+              - if fieldset.help
+                %p= fieldset.help
+              .well-white.body
+                %dl.show-fields
+                  - fields.each_with_index do |field, index|
+                    - unless values[index].nil? && RailsAdmin::config.compact_show_view
+                      %dt
+                        %span.label.label-info{:class => "#{field.type_css_class} #{field.css_class}"}
+                          = field.label
+                      %dd
+                        %pre= field.pretty_value

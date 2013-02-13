@@ -1,9 +1,34 @@
-.row-fluid
+.row-fluid.block
   .span6#rails_admin_jstree
-    .js_tree_nodes{:'data-update-path' => jstree_path(model_name: @abstract_model)}
-
-= #stylesheet_link_tag 'rails_admin/rails_admin_nestable'
-= javascript_include_tag 'rails_admin/jquery.cookie'
-= javascript_include_tag 'rails_admin/jquery.hotkeys'
-= javascript_include_tag 'rails_admin/jquery.jstree'
+    .well
+      .navbar
+        .navbar-inner
+          %h5= @page_name
+      %ul.toolbar{id: 'jstree_menu'}
+        %li
+          %a{id: 'create', href: '#'} 
+            %i.icon-plus-sign
+            %span Nuevo
+        %li
+          %a{id: 'rename', href: '#'} 
+            %i.icon-font
+            %span Renombrar
+        %li
+          %a.pjax{id: 'edit'} 
+            %i.icon-pencil
+            %span Editar
+        %li
+          %a{id: 'remove', href: '#'} 
+            %i.icon-remove
+            %span Eliminar
+                
+      .body
+        .js_tree_nodes{:'data-url' => jstree_path(model_name: @abstract_model)}
+  
+  .span6#rails_admin_jstree_node
+  
+= javascript_include_tag 'rails_admin/jstree/jquery.cookie'
+= javascript_include_tag 'rails_admin/jstree/jquery.hotkeys'
+= javascript_include_tag 'rails_admin/jstree/jquery.jstree'
 = javascript_include_tag 'rails_admin/rails_admin_jstree'
+
